@@ -8,7 +8,7 @@ variable "region" {
   type        = string
 
   validation {
-    condition     = strcontains(var.location, "-")
+    condition     = strcontains(var.region, "-")
     error_message = "Please select a regional bucket location. Multiregion buckets incur higher networking costs."
   }
 }
