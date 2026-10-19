@@ -15,6 +15,6 @@ resource "google_storage_bucket_iam_member" "bucket_object_creator" {
 resource "google_storage_bucket_iam_member" "bucket_object_admin" {
   for_each = toset(var.read_write_members)
   bucket   = google_storage_bucket.bucket.name
-  role     = "roles/storage.objectAdmin"
+  role     = "roles/storage.objectUser"
   member   = each.key
 }
