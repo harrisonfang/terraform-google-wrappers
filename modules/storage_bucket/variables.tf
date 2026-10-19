@@ -19,24 +19,24 @@ variable "object_ttl_days" {
   default     = null
 }
 
-variable "read_users" {
-  description = "A list of users that should have read access to the storage bucket."
+variable "read_only_members" {
+  description = "A list of members that should have read access to the storage bucket."
   type        = list(string)
   default     = []
 }
 
-variable "write_once_users" {
+variable "write_once_members" {
   description = <<-EOT
-    A list of users that should only have write access to the storage bucket. It is called "write once" because they are
+    A list of members that should only have write access to the storage bucket. It is called "write once" because they are
     not allowed to read or overwrite existing data.
     EOT
   type        = list(string)
   default     = []
 }
 
-variable "read_write_users" {
+variable "read_write_members" {
   description = <<-EOT
-    A list of users that should have both read and write access to the storage bucket. They are allowed to overwrite
+    A list of members that should have both read and write access to the storage bucket. They are allowed to overwrite
     existing data.
     EOT
   type        = list(string)
