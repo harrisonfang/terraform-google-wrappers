@@ -3,5 +3,5 @@ module "simple_storage_bucket" {
   version = "~> 0.3.0"
 
   name   = "${var.project_id}-simple-storage-bucket"
-  region = var.region
+  region = "us-west1"
 }
