@@ -6,8 +6,6 @@ This module is used to create storage buckets. Buckets are always configured wit
 2. [Regional storage location](#regional-storage-location)
 3. [Uniform bucket level access](#uniform-bucket-level-access)
 
-Set `project_id` to create the bucket in a specific project. When omitted or `null`, the module uses the Google provider's project.
-
 ## Autoclass
 
 Autoclass leads to some pretty good reductions in storage costs unless you have a unique access pattern or specific latency requirements. The pricing model is fair because you only incur additional costs when accessing objects that haven't been used in a long time. This is worth it given how much cheaper non-standard storage classes are.
