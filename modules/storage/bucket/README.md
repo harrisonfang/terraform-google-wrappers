@@ -8,9 +8,9 @@ This module is used to create storage buckets. Buckets are generally configured 
 
 ## Autoclass
 
-Autoclass can reduce storage costs by moving infrequently accessed objects to colder storage classes.
+Autoclass leads to some pretty good reductions in storage costs unless you have a unique access pattern or specific latency requirements. The pricing model is fair because you only incur additional costs when accessing objects that haven't been used in a long time. This is worth it given how much cheaper non-standard storage classes are.
 
-This module enables Autoclass when `object_ttl_days` is unset, `null`, or greater than 30, and disables it for TTLs of 30 days or less. Objects of at least 128 KiB become eligible for Nearline after 30 days without data access. This is a simple cutoff, not a cost-savings guarantee: savings also depend on object sizes, access patterns, and Autoclass management fees.
+This module disables Autoclass when `object_ttl_days` is 30 or less.
 
 See [GCP docuemntation](https://cloud.google.com/storage/docs/autoclass) for more info.
 
