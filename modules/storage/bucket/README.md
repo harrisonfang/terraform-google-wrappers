@@ -1,6 +1,6 @@
 # Storage Bucket
 
-This module is used to create storage buckets. Buckets use the following settings:
+This module is used to create storage buckets. Buckets are generally configured with the following settings:
 
 1. [Autoclass](#autoclass)
 2. [Regional storage location](#regional-storage-location)
