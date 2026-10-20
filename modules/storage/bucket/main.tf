@@ -5,7 +5,7 @@ resource "google_storage_bucket" "bucket" {
   uniform_bucket_level_access = true
 
   autoclass {
-    enabled                = true
+    enabled                = var.object_ttl_days == null
     terminal_storage_class = "ARCHIVE"
   }
 

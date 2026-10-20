@@ -2,7 +2,7 @@
 
 This module is used to create storage buckets. Buckets are always configured with the following settings:
 
-1. [Autoclass](#autoclass)
+1. [Autoclass](#autoclass) when `object_ttl_days` is unset
 2. [Regional storage location](#regional-storage-location)
 3. [Uniform bucket level access](#uniform-bucket-level-access)
 
