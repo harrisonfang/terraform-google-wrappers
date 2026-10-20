@@ -1,4 +1,4 @@
-variable "project_id" {
+variable "project" {
   description = "The GCP project in which to create the bucket. Defaults to the provider project when null."
   type        = string
   default     = null
