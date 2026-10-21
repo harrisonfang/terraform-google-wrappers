@@ -2,8 +2,8 @@ module "simple_storage_bucket" {
   source  = "harrisonfang/wrappers/google//modules/storage/bucket"
   version = "~> 0.3.0"
 
-  project = var.project_id
+  project = var.project
 
-  name   = "${var.project_id}-simple-storage-bucket"
+  name   = "${var.project}-simple-storage-bucket"
   region = "us-west1"
 }
