@@ -1,9 +1,3 @@
-variable "project" {
-  description = "A GCP project in which to create the bucket. Defaults to the provider project otherwise."
-  type        = string
-  default     = null
-}
-
 variable "name" {
   description = "A name for the storage bucket."
   type        = string
