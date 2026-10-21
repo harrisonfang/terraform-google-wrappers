@@ -8,7 +8,7 @@ This module is used to create storage buckets. Buckets are generally configured 
 
 ## Autoclass
 
-Autoclass is pretty simple way to reduce storage costs unless you have a unique access pattern or specific latency requirements. The pricing model is fair and the management cost is minimal compared to how much cheaper non-standard storage classes are. See the [documentation](https://cloud.google.com/storage/docs/autoclass) for more info.
+Autoclass is a simple way to reduce storage costs unless you have a unique access pattern or specific latency requirements. The pricing model is fair and the management cost is minimal compared to how much cheaper non-standard storage classes are. See the [documentation](https://cloud.google.com/storage/docs/autoclass) for more info.
 
 In the case of this module, we always enable autoclass unless you set `object_ttl_days` to 30 or less. This is because the object will be deleted before autoclass savings can kick in.
 
