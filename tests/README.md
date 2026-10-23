@@ -38,3 +38,7 @@ The fixture uses local source: CFT module-swapper v0.4.20 cannot resolve the nes
 
 
 These tests do not mutate project-wide settings. Separate state does not serialize project-wide changes; no shared-project lock is configured.
+
+## Adding a module test
+
+Add a fixture under `tests/fixtures/<name>` with `project_id` and `name_prefix` inputs, then call `newFixture(t, "<name>")`. Add assertions with `DefineVerify` (including `DefaultVerify` for the no-drift check) and call `Test()`. CFT owns init, apply, verification and teardown; the shared helper only handles opt-in configuration, workspace isolation and recovery. Keep resource-specific setup and assertions in the fixture and its test. The source copy includes `.tf` files and provider locks, not variable files or state.
