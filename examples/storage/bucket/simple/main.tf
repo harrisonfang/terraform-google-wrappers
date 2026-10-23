@@ -3,6 +3,6 @@ module "simple_storage_bucket" {
   version = "~> 0.3.0"
 
   project = var.project
-  name   = "simple-storage-bucket-${random_id.value.hex}"
-  region = "us-west1"
+  name    = "simple-storage-bucket-${random_id.value.hex}"
+  region  = "us-west1"
 }
