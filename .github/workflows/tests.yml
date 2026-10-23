@@ -1,0 +1,39 @@
+name: Tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  local:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
+        with:
+          go-version-file: tests/go.mod
+          cache-dependency-path: tests/go.sum
+      - uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
+        with:
+          terraform_version: 1.9.0
+          terraform_wrapper: false
+      - run: terraform fmt -check -recursive
+      - name: Go format
+        run: test -z "$(gofmt -l tests/*.go)"
+      - name: Local tests and vet
+        working-directory: tests
+        run: |
+          go test -short ./...
+          go vet ./...
+      - name: Validate fixture (no cloud credentials)
+        working-directory: tests/fixtures/storage_bucket
+        run: |
+          terraform init -backend=false -input=false
+          terraform validate
