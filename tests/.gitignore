@@ -1,0 +1,4 @@
+/.runs/
+**/.terraform/
+**/terraform.tfstate*
+**/crash.log
