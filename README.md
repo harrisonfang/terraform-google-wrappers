@@ -4,7 +4,3 @@ A collection of opinionated terraform modules for working with Google Cloud Plat
 
 1. Simplify the configuration. Avoid legacy settings and enable useful features.
 2. Keep costs low. Even with these settings, GCP still guarantees 3 to 4 nines of reliability.
-
-## Tests
-
-See [tests](tests) for local checks and opt-in integration tests.
